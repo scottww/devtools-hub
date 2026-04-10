@@ -156,13 +156,13 @@ import { heroStats, roadmapItems, toolGroups } from '@/data/tools'
 
 <style scoped>
 .home-page {
-  gap: 28px;
+  gap: 22px;
 }
 
 .home-hero {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.88fr);
-  gap: 30px;
+  gap: 24px;
   overflow: hidden;
 }
 
@@ -192,7 +192,7 @@ import { heroStats, roadmapItems, toolGroups } from '@/data/tools'
 .home-hero__aside {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   min-width: 0;
 }
 
@@ -200,7 +200,7 @@ import { heroStats, roadmapItems, toolGroups } from '@/data/tools'
   display: inline-flex;
   align-items: center;
   padding: 8px 12px;
-  border-radius: 999px;
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid rgba(15, 28, 56, 0.1);
   color: var(--text);
@@ -210,14 +210,14 @@ import { heroStats, roadmapItems, toolGroups } from '@/data/tools'
 
 .hero-strip {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
-  margin: 24px 0 4px;
+  margin: 20px 0 2px;
 }
 
 .hero-strip__item {
-  padding: 10px 12px;
-  border-radius: 14px;
+  padding: 8px 11px;
+  border-radius: 6px;
   background: rgba(15, 28, 56, 0.06);
   color: var(--text-soft);
   font-size: 0.88rem;
@@ -227,7 +227,7 @@ import { heroStats, roadmapItems, toolGroups } from '@/data/tools'
 .hero-console {
   padding: 0;
   overflow: hidden;
-  border-radius: 24px;
+  border-radius: 10px;
   background: linear-gradient(180deg, #0f1a2e 0%, #13233e 100%);
   box-shadow: 0 26px 44px rgba(11, 17, 30, 0.24);
 }
@@ -259,7 +259,7 @@ import { heroStats, roadmapItems, toolGroups } from '@/data/tools'
 }
 
 .hero-console__content {
-  padding: 20px 18px 22px;
+  padding: 18px 16px;
   color: #f3f7ff;
 }
 
@@ -273,7 +273,7 @@ import { heroStats, roadmapItems, toolGroups } from '@/data/tools'
 
 .hero-console__lines {
   display: grid;
-  gap: 10px;
+  gap: 8px;
 }
 
 .hero-console__lines div {
@@ -281,8 +281,8 @@ import { heroStats, roadmapItems, toolGroups } from '@/data/tools'
   align-items: center;
   justify-content: space-between;
   gap: 14px;
-  padding: 12px 14px;
-  border-radius: 16px;
+  padding: 10px 12px;
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.05);
   font-family: var(--font-mono);
   font-size: 0.9rem;
@@ -290,7 +290,7 @@ import { heroStats, roadmapItems, toolGroups } from '@/data/tools'
 
 .hero-console__lines span {
   padding: 5px 9px;
-  border-radius: 999px;
+  border-radius: 6px;
   background: rgba(73, 215, 160, 0.14);
   color: #80efc4;
   font-family: var(--font-body);
@@ -303,7 +303,7 @@ import { heroStats, roadmapItems, toolGroups } from '@/data/tools'
 .roadmap {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 18px;
 }
 
 .section-copy {
@@ -316,21 +316,21 @@ import { heroStats, roadmapItems, toolGroups } from '@/data/tools'
 
 .promise-card,
 .roadmap-card {
-  min-height: 188px;
+  min-height: 164px;
 }
 
 .group-stack {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 14px;
 }
 
 .home-group {
   display: grid;
   grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
-  gap: 18px;
-  padding: 20px;
-  border-radius: 26px;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 10px;
   background: rgba(13, 20, 36, 0.03);
   border: 1px solid rgba(13, 20, 36, 0.08);
 }
@@ -364,7 +364,7 @@ import { heroStats, roadmapItems, toolGroups } from '@/data/tools'
   inset: 0 auto auto 0;
   width: 100%;
   height: 4px;
-  border-radius: 999px;
+  border-radius: 2px;
   background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
 }
 

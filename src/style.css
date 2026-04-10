@@ -31,6 +31,13 @@
   --shadow-shell: 0 36px 90px rgba(7, 12, 24, 0.34);
   --shadow-panel: 0 20px 44px rgba(11, 17, 30, 0.08);
   --shadow-card: 0 14px 28px rgba(11, 17, 30, 0.07);
+  --radius-shell: 16px;
+  --radius-panel: 10px;
+  --radius-card: 8px;
+  --radius-control: 8px;
+  --space-page: 20px;
+  --space-panel: 22px;
+  --space-hero: clamp(22px, 3.4vw, 36px);
 
   color: var(--text);
   font-family: var(--font-body);
@@ -102,7 +109,7 @@ pre {
 
 #app {
   width: min(1380px, calc(100% - 28px));
-  margin: 14px auto;
+  margin: 12px auto;
   min-height: calc(100vh - 28px);
 }
 
@@ -112,7 +119,7 @@ pre {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border-radius: 34px;
+  border-radius: var(--radius-shell);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.14), transparent 16%),
     linear-gradient(180deg, var(--shell-strong) 0%, var(--shell) 100%);
@@ -144,7 +151,7 @@ pre {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 18px 28px;
+  padding: 16px 24px;
   background:
     linear-gradient(180deg, rgba(10, 18, 33, 0.96) 0%, rgba(16, 28, 49, 0.93) 100%);
   color: var(--text-inverse);
@@ -172,7 +179,7 @@ pre {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 16px;
+  border-radius: var(--radius-control);
   background:
     linear-gradient(135deg, var(--accent) 0%, #ffb04a 52%, var(--accent-2) 100%);
   color: #101726;
@@ -209,8 +216,8 @@ pre {
 }
 
 .nav-link {
-  padding: 10px 14px;
-  border-radius: 999px;
+  padding: 9px 13px;
+  border-radius: 8px;
   color: rgba(247, 251, 255, 0.74);
   font-size: 0.94rem;
   font-weight: 600;
@@ -233,8 +240,8 @@ pre {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 12px;
-  border-radius: 999px;
+  padding: 9px 11px;
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.08);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
   color: rgba(247, 251, 255, 0.78);
@@ -255,7 +262,7 @@ pre {
 
 .site-main {
   flex: 1;
-  padding: 30px;
+  padding: 24px;
 }
 
 .site-footer {
@@ -263,7 +270,7 @@ pre {
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-  padding: 18px 28px 24px;
+  padding: 16px 24px 20px;
   border-top: 1px solid rgba(17, 27, 45, 0.08);
   color: var(--text-soft);
   font-size: 0.92rem;
@@ -278,7 +285,7 @@ pre {
 
 .footer-meta span {
   padding: 7px 11px;
-  border-radius: 999px;
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid rgba(17, 27, 45, 0.08);
 }
@@ -286,7 +293,7 @@ pre {
 .page-shell {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: var(--space-page);
 }
 
 .hero-panel,
@@ -294,13 +301,13 @@ pre {
 .panel {
   position: relative;
   overflow: hidden;
-  border-radius: 30px;
+  border-radius: var(--radius-panel);
   border: 1px solid rgba(17, 27, 45, 0.08);
   box-shadow: var(--shadow-panel);
 }
 
 .hero-panel {
-  padding: clamp(26px, 4vw, 42px);
+  padding: var(--space-hero);
   background:
     radial-gradient(circle at top left, rgba(255, 122, 69, 0.12), transparent 24%),
     radial-gradient(circle at bottom right, rgba(15, 160, 142, 0.12), transparent 28%),
@@ -309,7 +316,7 @@ pre {
 
 .tool-panel,
 .panel {
-  padding: 24px;
+  padding: var(--space-panel);
   background: var(--surface);
 }
 
@@ -326,7 +333,7 @@ pre {
   gap: 8px;
   width: fit-content;
   padding: 8px 14px;
-  border-radius: 999px;
+  border-radius: 7px;
   background: rgba(17, 27, 45, 0.9);
   color: #f9fbff;
   font-size: 0.8rem;
@@ -337,7 +344,7 @@ pre {
 
 .page-title,
 .hero-title {
-  margin: 18px 0 12px;
+  margin: 14px 0 10px;
   max-width: 13ch;
   font-family: var(--font-display);
   font-size: clamp(2.6rem, 5vw, 5rem);
@@ -364,7 +371,7 @@ pre {
 .actions-row,
 .button-row {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
@@ -373,9 +380,9 @@ pre {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  min-height: 48px;
-  padding: 0 18px;
-  border-radius: 16px;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: var(--radius-control);
   background: linear-gradient(135deg, var(--accent) 0%, #ffb04a 100%);
   color: #111b2d;
   font-weight: 800;
@@ -417,7 +424,7 @@ pre {
 .result-grid,
 .card-grid {
   display: grid;
-  gap: 16px;
+  gap: 14px;
 }
 
 .stats-grid {
@@ -437,8 +444,8 @@ pre {
 .tool-card,
 .result-card,
 .mini-card {
-  padding: 18px;
-  border-radius: 24px;
+  padding: 16px;
+  border-radius: var(--radius-card);
   background: var(--surface-strong);
   border: 1px solid rgba(17, 27, 45, 0.08);
   box-shadow: var(--shadow-card);
@@ -485,8 +492,8 @@ pre {
 .metric-chip {
   display: inline-flex;
   align-items: center;
-  padding: 7px 10px;
-  border-radius: 999px;
+  padding: 6px 9px;
+  border-radius: 6px;
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.02em;
@@ -516,7 +523,7 @@ pre {
 .field-grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 14px;
+  gap: 12px;
 }
 
 .field {
@@ -544,8 +551,8 @@ pre {
 .field select,
 .field textarea {
   width: 100%;
-  padding: 14px 15px;
-  border-radius: 16px;
+  padding: 13px 14px;
+  border-radius: var(--radius-control);
   border: 1px solid rgba(17, 27, 45, 0.12);
   background: rgba(255, 255, 255, 0.96);
   color: var(--text);
@@ -565,7 +572,7 @@ pre {
 }
 
 .field input[type='range'] {
-  min-height: 46px;
+  min-height: 42px;
   padding-inline: 12px;
   accent-color: var(--accent);
 }
@@ -601,10 +608,10 @@ pre {
   gap: 12px;
   align-items: flex-start;
   justify-content: center;
-  min-height: 190px;
-  padding: 26px;
+  min-height: 172px;
+  padding: 22px;
   border: 1.5px dashed rgba(255, 122, 69, 0.32);
-  border-radius: 28px;
+  border-radius: var(--radius-panel);
   background:
     linear-gradient(135deg, rgba(255, 122, 69, 0.05), rgba(15, 160, 142, 0.05)),
     linear-gradient(rgba(17, 27, 45, 0.03) 1px, transparent 1px),
@@ -636,7 +643,7 @@ pre {
 
 .progress-bar {
   width: 100%;
-  height: 11px;
+  height: 9px;
   overflow: hidden;
   border-radius: 999px;
   background: rgba(17, 27, 45, 0.08);
@@ -651,8 +658,8 @@ pre {
 }
 
 .message {
-  padding: 14px 16px;
-  border-radius: 18px;
+  padding: 13px 14px;
+  border-radius: var(--radius-card);
   border: 1px solid transparent;
 }
 
@@ -695,7 +702,7 @@ pre {
 .preview-frame {
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: var(--radius-card);
   border: 1px solid rgba(17, 27, 45, 0.08);
   background: linear-gradient(135deg, rgba(255, 122, 69, 0.12), rgba(15, 160, 142, 0.12));
 }
@@ -707,9 +714,9 @@ pre {
 }
 
 .empty-state {
-  padding: 30px;
+  padding: 24px;
   text-align: center;
-  border-radius: 24px;
+  border-radius: var(--radius-card);
   border: 1px dashed rgba(17, 27, 45, 0.16);
   color: var(--text-soft);
   background: rgba(255, 255, 255, 0.44);
@@ -737,14 +744,14 @@ pre {
 
   .app-shell {
     min-height: calc(100vh - 18px);
-    border-radius: 28px;
+    border-radius: 14px;
   }
 
   .site-header,
   .site-main,
   .site-footer {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 18px;
+    padding-right: 18px;
   }
 
   .site-header {
@@ -769,8 +776,8 @@ pre {
 
 @media (max-width: 640px) {
   .site-main {
-    padding-top: 22px;
-    padding-bottom: 22px;
+    padding-top: 18px;
+    padding-bottom: 18px;
   }
 
   .site-header,
@@ -788,7 +795,7 @@ pre {
   .tool-panel,
   .panel {
     padding: 18px;
-    border-radius: 24px;
+    border-radius: 10px;
   }
 
   .button,
