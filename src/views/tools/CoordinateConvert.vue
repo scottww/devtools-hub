@@ -4,8 +4,8 @@
       <span class="eyebrow">GIS</span>
       <h1 class="page-title">坐标转换</h1>
       <p class="hero-text">
-        输入任意一种坐标系下的经纬度，自动换算出 WGS84、GCJ02 和 BD09
-        三组结果，适合地图调试和数据比对。
+        输入任意一种坐标系下的经纬度，自动换算出 WGS84、GCJ02 和 BD09 三组结果，
+        适合地图调试、数据核对和前端开发时的快速验证。
       </p>
     </section>
 
@@ -22,19 +22,19 @@
 
         <div class="field field--third">
           <label for="lng-input">经度</label>
-          <input id="lng-input" v-model.trim="form.lng" type="text" placeholder="116.397128" />
+          <input id="lng-input" v-model.trim="form.lng" type="text" placeholder="120.155070" />
         </div>
 
         <div class="field field--third">
           <label for="lat-input">纬度</label>
-          <input id="lat-input" v-model.trim="form.lat" type="text" placeholder="39.916527" />
+          <input id="lat-input" v-model.trim="form.lat" type="text" placeholder="30.274085" />
         </div>
       </div>
 
       <div class="button-row">
         <button type="button" class="button" @click="runConvert">开始转换</button>
         <button type="button" class="button button--ghost" @click="loadPreset(presets[0])">
-          北京示例
+          杭州示例
         </button>
         <button type="button" class="button button--ghost" @click="loadPreset(presets[1])">
           上海示例
@@ -106,25 +106,25 @@ import { COORDINATE_SYSTEMS, convertCoordinate } from '@/utils/coordTransform'
 
 const presets = [
   {
-    name: '北京天安门',
-    description: '适合验证国内坐标偏移效果。',
+    name: '杭州西湖',
+    description: '公开景区坐标，适合验证国内坐标偏移效果。',
     source: 'WGS84',
-    lng: '116.397128',
-    lat: '39.916527'
+    lng: '120.155070',
+    lat: '30.274085'
   },
   {
     name: '上海外滩',
-    description: '另一个常用国内参考点。',
+    description: '常见城市地标，可用于对比另一组国内结果。',
     source: 'WGS84',
     lng: '121.490317',
     lat: '31.241701'
   },
   {
-    name: '新加坡',
+    name: '新加坡滨海湾',
     description: '中国区域外坐标，结果会提示无偏移。',
     source: 'WGS84',
-    lng: '103.819836',
-    lat: '1.352083'
+    lng: '103.860730',
+    lat: '1.282302'
   }
 ]
 
