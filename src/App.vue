@@ -5,20 +5,24 @@
         <span class="brand-mark">DH</span>
         <span class="brand-copy">
           <strong>DevTools Hub</strong>
-          <small>Browser-first utility workspace</small>
+          <small>Frontend utility workbench</small>
         </span>
       </RouterLink>
 
-      <nav class="site-nav" aria-label="Primary">
-        <RouterLink
-          v-for="link in primaryNav"
-          :key="link.path"
-          :to="link.path"
-          class="nav-link"
-        >
-          {{ link.label }}
-        </RouterLink>
-      </nav>
+      <div class="site-header__right">
+        <nav class="site-nav" aria-label="Primary">
+          <RouterLink
+            v-for="link in primaryNav"
+            :key="link.path"
+            :to="link.path"
+            class="nav-link"
+          >
+            {{ link.label }}
+          </RouterLink>
+        </nav>
+
+        <span class="site-status">4 tools live</span>
+      </div>
     </header>
 
     <main class="site-main">
