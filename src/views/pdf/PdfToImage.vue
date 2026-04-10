@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <PdfToImage />
-  </div>
+  <PdfToImage />
 </template>
 
 <script setup>

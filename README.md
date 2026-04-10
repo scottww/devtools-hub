@@ -1,96 +1,66 @@
 # DevTools Hub
 
-A Frontend Utility Platform for developers  
-前端开发工具集合，用于学习、演示
+一个适合部署到 GitHub Pages 的前端工具合集示例项目。
 
----
+## 项目简介
 
-## 🚀 项目介绍
+`DevTools Hub` 基于 `Vue 3 + Vite` 构建，定位是一个纯前端工具站点模板。当前版本已经补齐了几类常见工具页面，同时保留了适合继续扩展的整体壳层和页面结构。
 
-DevTools Hub 是一个基于 **Vue3 + Vite** 构建的前端工具平台，涵盖 PDF、图片处理、GIS 坐标转换以及常用开发工具。  
-项目完全前端实现，无后端依赖，可直接部署在 GitHub Pages。
+当前已实现的功能：
 
-> 🎯 目标：展示前端能力 + 项目架构能力 + UI 设计能力  
-> 📌 面试亮点：模块化设计、纯前端处理、多功能扩展
+- `PDF 转图片`：逐页渲染 PDF，并导出 PNG / JPG
+- `图片压缩`：批量压缩图片，支持格式转换和尺寸限制
+- `坐标转换`：WGS84 / GCJ02 / BD09 互转
+- `JSON 格式化`：格式化、压缩、校验和复制 JSON
 
----
+项目特点：
 
-## 🛠 功能模块
+- 全部处理逻辑在浏览器内完成，不依赖后端
+- 使用 `hash` 路由，适合直接部署到 GitHub Pages
+- 页面骨架、交互区和结果区已经统一，后续便于继续加工具
 
-### PDF Tools
-- **PDF to Image**：将 PDF 文件每页转为图片
+## 技术栈
 
-### Image Tools
-- **Image Compress**：图片压缩与优化
-- **Image Resize**：图片尺寸调整
+- `Vue 3`
+- `Vite`
+- `Vue Router`
+- `Ant Design Vue`
+- `pdfjs-dist`
 
-### GIS Tools
-- **Coordinate Convert**：WGS84 / GCJ02 / BD09 坐标互转
-- **GeoJSON Viewer**：可视化 GeoJSON 数据
-
-### Dev Tools
-- **JSON Formatter**：格式化与校验 JSON
-- **Timestamp Converter**：时间戳与日期互转
-
----
-
-## 🧱 技术栈
-
-- **Vue3 + Composition API**  
-- **Vite** 构建工具  
-- **Vue Router**（hash 模式，支持 GitHub Pages）  
-- **Ant Design Vue** UI 组件库  
-- **gh-pages** 部署工具（GitHub Pages）
-
----
-
-## ⚙️ 本地运行
-
-1. 克隆仓库：
-
-```bash
-git clone https://github.com/用户名/devtools-hub.git
-cd devtools-hub
-```
-
-2. 安装依赖：
+## 本地运行
 
 ```bash
 npm install
-```
-
-3. 启动开发：
-
-```bash
 npm run dev
 ```
-打开浏览器访问：**http://localhost:5173**
 
-4. 打包项目：
+开发环境默认地址：
+
+```text
+http://localhost:5173
+```
+
+## 打包构建
 
 ```bash
 npm run build
 ```
 
-5. 部署到 GitHub Pages：
+## 部署到 GitHub Pages
+
+项目已配置：
+
+- `vite.config.js` 中的 `base: '/devtools-hub/'`
+- `createWebHashHistory(import.meta.env.BASE_URL)` 路由模式
+
+部署命令：
 
 ```bash
-npm install gh-pages -D   # 如果还没安装
 npm run deploy
 ```
-页面访问地址：**https://用户名.github.io/devtools-hub/**
 
-🔑 注意：
+## 后续扩展建议
 
-- **vite.config.js** 中必须配置 **base: '/devtools-hub/'**
-- 路由必须使用 hash 模式，否则 GitHub Pages 刷新会 404
-
-## 🌟 项目亮点
-- 模块化工具平台设计，方便后续扩展
-- 全前端实现，无需后端服务
-- GitHub Pages 在线部署，可直接展示
-- 每个功能页面独立，可单独演示
-
-## 📄 LICENSE
-MIT License
-
+- 增加时间戳转换、图片尺寸调整、文本差异对比等轻量工具
+- 将工具配置进一步抽离成统一元数据，减少新增页面时的重复代码
+- 继续沉淀结果下载、复制、错误提示等通用交互
