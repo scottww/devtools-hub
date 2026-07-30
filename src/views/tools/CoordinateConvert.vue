@@ -22,12 +22,12 @@
 
         <div class="field field--third">
           <label for="lng-input">经度</label>
-          <input id="lng-input" v-model.trim="form.lng" type="text" placeholder="120.155070" />
+          <input id="lng-input" v-model.trim="form.lng" type="number" min="-180" max="180" step="any" placeholder="120.155070" />
         </div>
 
         <div class="field field--third">
           <label for="lat-input">纬度</label>
-          <input id="lat-input" v-model.trim="form.lat" type="text" placeholder="30.274085" />
+          <input id="lat-input" v-model.trim="form.lat" type="number" min="-90" max="90" step="any" placeholder="30.274085" />
         </div>
       </div>
 
@@ -156,6 +156,13 @@ function runConvert() {
 
   if (!Number.isFinite(lng) || !Number.isFinite(lat)) {
     error.value = '请输入有效的经纬度数字。'
+    note.value = ''
+    result.value = null
+    return
+  }
+
+  if (lng < -180 || lng > 180 || lat < -90 || lat > 90) {
+    error.value = '经度应在 -180 至 180 之间，纬度应在 -90 至 90 之间。'
     note.value = ''
     result.value = null
     return

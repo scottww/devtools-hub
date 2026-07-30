@@ -69,9 +69,11 @@ export const primaryNav = [
   { label: 'JSON 格式化', path: '/json-format' }
 ]
 
+export const toolCount = toolGroups.reduce((count, group) => count + group.children.length, 0)
+
 export const heroStats = [
   {
-    value: '4',
+    value: String(toolCount),
     label: '已完成工具',
     detail: '都可以直接在浏览器内使用'
   },

@@ -21,7 +21,7 @@
           </RouterLink>
         </nav>
 
-        <span class="site-status">4 tools live</span>
+        <span class="site-status">{{ toolCount }} tools live</span>
       </div>
     </header>
 
@@ -47,5 +47,5 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 
-import { primaryNav } from '@/data/tools'
+import { primaryNav, toolCount } from '@/data/tools'
 </script>

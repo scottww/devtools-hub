@@ -65,7 +65,7 @@
       </div>
       <div v-else-if="results.length" class="message message--success">
         已处理 {{ results.length }} 张图片，原始总大小 {{ summary.original }}，输出总大小 {{ summary.output }}，
-        节省 {{ summary.saved }}。
+        节省 {{ summary.saved }}。<span v-if="failedCount">另有 {{ failedCount }} 张处理失败。</span>
       </div>
 
       <div v-if="results.length" class="result-grid">
@@ -113,6 +113,7 @@ const sourceFiles = ref([])
 const results = ref([])
 const processing = ref(false)
 const error = ref('')
+const failedCount = ref(0)
 const isDragging = ref(false)
 const progress = ref({
   current: 0,
@@ -179,12 +180,14 @@ function loadFiles(files) {
 
   sourceFiles.value = files
   error.value = ''
+  failedCount.value = 0
   processFiles()
 }
 
 function clearAll() {
   sourceFiles.value = []
   error.value = ''
+  failedCount.value = 0
   progress.value = { current: 0, total: 0 }
   revokeResults()
   results.value = []
@@ -310,6 +313,7 @@ async function processFiles() {
 
   processing.value = true
   error.value = ''
+  failedCount.value = 0
   progress.value = {
     current: 0,
     total: sourceFiles.value.length
@@ -318,18 +322,23 @@ async function processFiles() {
   revokeResults()
   results.value = []
 
-  try {
-    const nextResults = []
+  const nextResults = []
 
+  try {
     for (const [index, file] of sourceFiles.value.entries()) {
-      const compressed = await compressOne(file)
-      nextResults.push(compressed)
+      try {
+        const compressed = await compressOne(file)
+        nextResults.push(compressed)
+      } catch {
+        failedCount.value += 1
+      }
       progress.value.current = index + 1
     }
 
     results.value = nextResults
-  } catch (err) {
-    error.value = err.message
+    if (!nextResults.length) {
+      error.value = '所选图片均处理失败，请检查文件是否有效或更换输出格式。'
+    }
   } finally {
     processing.value = false
   }
