@@ -1,0 +1,1 @@
+function e(e){if(!Number.isFinite(e)||e<0)return`--`;if(e===0)return`0 B`;let t=[`B`,`KB`,`MB`,`GB`],n=e,r=0;for(;n>=1024&&r<t.length-1;)n/=1024,r+=1;let i=n>=100||r===0?0:1;return`${n.toFixed(i)} ${t[r]}`}function t(e,t,n){return Math.min(n,Math.max(t,e))}export{e as n,t};
